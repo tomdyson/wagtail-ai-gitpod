@@ -25,7 +25,7 @@ tasks:
   
 ports:
   - port: 8000
-    onOpen: open-preview
+    onOpen: gp preview `gp url 8000`'/admin/pages/add/home/standardpage/3/'
 
 vscode:
   extensions:
