@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      python -m pip install wagtail
+      source ~/.bashrc
+      wagtail start mysite .
+      python -m pip install -r requirements.txt
+      python -m pip install wagtail-ai
+      python manage.py migrate
+      echo "from django.contrib.auth import get_user_model; get_user_model().objects.create_superuser('admin', '', 'changeme')" | python manage.py shell
+      echo "CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']" >> mysite/settings/base.py
+      echo "INSTALLED_APPS += 'wagtail_ai'" >> mysite/settings/base.py
+      cat WAGTAIL_AI_SETTINGS >> mysite/settings/base.py
+
+    command: |
+      python manage.py runserver
+  
+ports:
+  - port: 8000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-python.python

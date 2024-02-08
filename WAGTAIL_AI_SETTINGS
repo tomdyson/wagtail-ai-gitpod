@@ -1,0 +1,16 @@
+
+# Wagtail AI settings
+
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
+WAGTAIL_AI = {
+    "BACKENDS": {
+        "default": {
+            "CLASS": "wagtail_ai.ai.llm.LLMBackend",
+            "CONFIG": {
+                # Model ID recognizable by the "LLM" library.
+                "MODEL_ID": "gpt-3.5-turbo",
+            },
+        }
+    }
+}
