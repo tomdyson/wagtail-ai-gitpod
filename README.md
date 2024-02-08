@@ -1,6 +1,6 @@
 # Wagtail AI Gitpod
 
-Launch a ready-to-code Wagtail development environment with wagtail-ai.
+Try out wagtail-ai on the latest version of Wagtail, in three minutes. You'll need a Github account and an OpenAPI API key.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/tomdyson/wagtail-ai-gitpod)
 
