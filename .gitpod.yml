@@ -19,13 +19,19 @@ tasks:
       echo "What is your OpenAI API key?"
       read openapi_api_key
       export OPENAPI_API_KEY=$openapi_api_key
+      
 
     command: |
       python manage.py runserver
+    
+  - name: preview
+    command: |
+        gp ports await 8000
+        gp preview `gp url 8000`'/admin/pages/add/home/standardpage/3/'
   
 ports:
   - port: 8000
-    onOpen: gp preview `gp url 8000`'/admin/pages/add/home/standardpage/3/'
+    onOpen: notify
 
 vscode:
   extensions:
