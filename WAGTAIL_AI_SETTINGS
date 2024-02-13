@@ -1,7 +1,6 @@
 
 INSTALLED_APPS.append("wagtail_ai")
 CSRF_TRUSTED_ORIGINS = ["https://*.gitpod.io"]
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 WAGTAIL_AI = {
     "BACKENDS": {
@@ -14,3 +13,5 @@ WAGTAIL_AI = {
         }
     }
 }
+
+OPENAI_API_KEY = "" # <- add your key here
